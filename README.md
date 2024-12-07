@@ -15,5 +15,5 @@
 
 ### Membro 3: Kaue Pântanovski
 <p>
- <img src="./img/Kaue_meme2.jpeg" width="20%" alt="Image description">
+ <img src="./img/Kaue_meme2.jpg" width="20%" alt="Image description">
 </p>
