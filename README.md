@@ -22,5 +22,5 @@
 
 ### Membro 4: Thiago Arrancatoco
 <p>
- <img src="./img/Thiago_meme2.jpg" width="20%" alt="Image description">
+ <img src="./img/Thiago_meme2.jpeg" width="20%" alt="Image description">
 </p>
