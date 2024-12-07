@@ -20,7 +20,7 @@
 
 
 
-### Membro 4: Thiago Arrancatoco
+### Membro 4: Detona Thirras
 <p>
  <img src="./img/Thiago_meme2.jpeg" width="20%" alt="Image description">
 </p>
