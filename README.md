@@ -27,7 +27,7 @@
 
 
 
-### Membro 5: Gabriel Chifrudovsk
+### Membro 5: Gabriel Baguncinha
 <p>
  <img src="./img/Gabriel_mem.jpeg" width="20%" alt="Image description">
 </p>
