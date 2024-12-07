@@ -1,8 +1,8 @@
 .data
-	pedirTamanho: .asciiz "Forneça o tamanho dos Vetores X e Y: "
+	pedirTamanho: .asciiz "ForneÃ§a o tamanho dos Vetores X e Y: "
 	valoresX: .asciiz "Entre com os valores do vetor X: "
 	valoresY: .asciiz "Entre com os valores do vetor Y: "
-	resultado: .asciiz "O produto escalar entre os vetores X e Y é: "
+	resultado: .asciiz "O produto escalar entre os vetores X e Y Ã©: "
 	quebraLinha: "\n"
 	zero_double: .double 0.0
 	
@@ -20,13 +20,13 @@ main:
 	move $t1, $v0 # guardando o tamanho dos vetores em $t1
 	move $t2, $v0 #guardando tamanho original em $t2 para resetar depois
 	
-	#Alocar espaço para os dois vetores dinamicamente
-	li $v0, 9 #comando para alocar memória dinamicamente
+	#Alocar espaÃ§o para os dois vetores dinamicamente
+	li $v0, 9 #comando para alocar memÃ³ria dinamicamente
 	move $a0, $t1
 	mul $a0, $a0, 8 # calcula o tamanho em bytes
 	syscall
-	move $t3, $v0 # guarda o endereço do vetor X
-	move $t4, $t3 #joga o endereço do vetorX para $t4 para usar no loop
+	move $t3, $v0 # guarda o endereÃ§o do vetor X
+	move $t4, $t3 #joga o endereÃ§o do vetorX para $t4 para usar no loop
 	
 	#receber elementos do vetor x
 	li $v0, 4
@@ -43,7 +43,7 @@ main:
 		li $v0, 7
 		syscall
 		s.d $f0 0($t4) #armazena no vetor
-		addi $t4, $t4, 8 #incrementa a posição do vetor
+		addi $t4, $t4, 8 #incrementa a posiÃ§Ã£o do vetor
 		subi $t1, $t1, 1
 		j loop_x
 		
