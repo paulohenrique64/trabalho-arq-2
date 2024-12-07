@@ -6,7 +6,7 @@
 
 
 
-### Membro 2: Paulo Anão
+### Membro 2: Paulo Microlito
 <p>
  <img src="./img/PauloRibeiro.jpeg" width="20%" alt="Image description">
 </p> 
