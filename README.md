@@ -24,3 +24,10 @@
 <p>
  <img src="./img/Thiago_meme2.jpeg" width="20%" alt="Image description">
 </p>
+
+
+
+### Membro 5: Gabriel Chifrudovsk
+<p>
+ <img src="./img/Gabriel_mem.jpeg" width="20%" alt="Image description">
+</p>
