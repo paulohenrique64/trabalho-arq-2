@@ -7,6 +7,10 @@ numero0Double: .double 0.0
 numero1Double: .double 1.0
 	
 .text
+
+.globl main
+
+main:
 	l.d $f0, numero1Double
 	l.d $f2, numero1Double 
 	l.d $f4, numero0Double # reg $f4 guarda o somatorio harmonico (double)

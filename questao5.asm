@@ -1,8 +1,8 @@
 .data
-pedirTamanho: .asciiz "Forne�a o tamanho dos Vetores X e Y: "
+pedirTamanho: .asciiz "Forneca o tamanho dos Vetores X e Y: "
 valoresX: .asciiz "Entre com os valores do vetor X: "
 valoresY: .asciiz "Entre com os valores do vetor Y: "
-resultado: .asciiz "O produto escalar entre os vetores X e Y �: "
+resultado: .asciiz "O produto escalar entre os vetores X e Y eh: "
 quebraLinha: "\n"
 zero_double: .double 0.0
 	
@@ -10,7 +10,7 @@ zero_double: .double 0.0
 .text
 .global main
 main:
-	#imprimir mensagem pedindo o tamanho dos vetores e lendo o tamanho dos vetores
+	# Imprimir mensagem pedindo o tamanho dos vetores e lendo o tamanho dos vetores
 	li $v0, 4
 	la $a0, pedirTamanho
 	syscall
@@ -18,15 +18,15 @@ main:
 	li $v0, 5
 	syscall
 	move $t1, $v0 # guardando o tamanho dos vetores em $t1
-	move $t2, $v0 #guardando tamanho original em $t2 para resetar depois
+	move $t2, $v0 # guardando tamanho original em $t2 para resetar depois
 	
-	#Alocar espa�o para os dois vetores dinamicamente
-	li $v0, 9 #comando para alocar mem�ria dinamicamente
+	# Alocar espaco para os dois vetores dinamicamente
+	li $v0, 9 # comando para alocar memoria dinamicamente
 	move $a0, $t1
 	mul $a0, $a0, 8 # calcula o tamanho em bytes
 	syscall
-	move $t3, $v0 # guarda o endere�o do vetor X
-	move $t4, $t3 #joga o endere�o do vetorX para $t4 para usar no loop
+	move $t3, $v0 # guarda o endereco do vetor X
+	move $t4, $t3 # joga o endereco do vetorX para $t4 para usar no loop
 	
 	#receber elementos do vetor x
 	li $v0, 4
@@ -42,8 +42,8 @@ main:
 		beq $t1, $zero, saida1
 		li $v0, 7
 		syscall
-		s.d $f0 0($t4) #armazena no vetor
-		addi $t4, $t4, 8 #incrementa a posi��o do vetor
+		s.d $f0 0($t4) # armazena no vetor
+		addi $t4, $t4, 8 # incrementa a posicao do vetor
 		subi $t1, $t1, 1
 		j loop_x
 		
@@ -78,7 +78,7 @@ main:
 		j loop_y
 	
 	
-	#reposicionando os ponteiros para o inicio dos vetores
+	# reposicionando os ponteiros para o inicio dos vetores
 	saida2:
 		
 		move $t1, $t2
@@ -88,7 +88,7 @@ main:
 	
 		
 		
-	#Loop para iterar os valores 
+	# Loop para iterar os valores 
 	loop_produtoEscalar:
 		beq $t1, $zero, saida
 		l.d $f2, 0($t4)
@@ -100,7 +100,7 @@ main:
 		subi $t1, $t1, 1
 		j loop_produtoEscalar
 		
-	#Imprimir o resultado do produto escalar 	
+	# Imprimir o resultado do produto escalar 	
 	saida:
 		li $v0, 4
 		la $a0, resultado
@@ -110,6 +110,6 @@ main:
 	 	mov.d $f12, $f8
 	 	syscall
 	 	
-	#Terminar o programa
+	# Terminar o programa
 	li $v0, 10
 	syscall

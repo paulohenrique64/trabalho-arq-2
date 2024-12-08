@@ -14,6 +14,7 @@ quebra_linha: .asciiz "\n"
 .globl main
 
 main:
+    #Chamada de funções
     jal entrada
     jal delta
     jal bhaskara
@@ -52,15 +53,15 @@ delta:
     # Calcular delta = b² - 4ac
     mul.s $f7, $f5, $f5   # $f7 = b²
     mul.s $f8, $f4, $f6   # $f8 = ac
-    l.s   $f0, float4
+    l.s   $f0, float4     # Carrega o valor 4.0
     mul.s $f8, $f8, $f0   # $f8 = 4ac
     sub.s $f7, $f7, $f8   # $f7 = b² - 4ac
     
     jr $ra
     
 bhaskara:
-    l.s  $f11, float0
-    c.lt.s $f7, $f11    # delta < 0
+    l.s  $f11, float0     # Carrega o valor 0.0
+    c.lt.s $f7, $f11      # se delta < 0
     bc1t nao_ha_raizes    # Salta para 'nao_ha_raizes'
     
     # Calcular raiz de delta
@@ -73,11 +74,11 @@ bhaskara:
     add.s $f14, $f4, $f4
 
     # Calcular x1
-    add.s $f15, $f13, $f12
+    add.s $f15, $f13, $f12  # (-b + sqrt(delta))
     div.s $f15, $f15, $f14  # x1 = (-b + sqrt(delta)) / (2 * a)
 
     # Calcular x2 
-    sub.s $f16, $f13, $f12
+    sub.s $f16, $f13, $f12  #(-b - sqrt(delta))
     div.s $f16, $f16, $f14  # x2 = (-b - sqrt(delta)) / (2 * a)
     
     jr $ra
