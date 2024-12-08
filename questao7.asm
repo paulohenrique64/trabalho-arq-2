@@ -1,10 +1,10 @@
 .data
-	enunciadoExercicio: .asciiz "Exercicio 7 - Dado um natural n, determine o número harmônico Hn"
-	pedirNumeroNatural: .asciiz "Digite o número natural: " 
-	quebraDeLinha: .asciiz "\n\n"
-	mensagemResultado: .asciiz "O número harmônico é: "
-	numero0Double: .double 0.0
-	numero1Double: .double 1.0
+enunciadoExercicio: .asciiz "Exercicio 7 - Dado um natural n, determine o número harmônico Hn"
+pedirNumeroNatural: .asciiz "Digite o número natural: " 
+quebraDeLinha: .asciiz "\n\n"
+mensagemResultado: .asciiz "O número harmônico é: "
+numero0Double: .double 0.0
+numero1Double: .double 1.0
 	
 .text
 	l.d $f0, numero1Double
@@ -65,5 +65,3 @@
 	# terminando o programa
 	li $v0, 10
 	syscall
-
-
